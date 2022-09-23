@@ -1,0 +1,16 @@
+.container{
+    width:500px;
+    height:500px;
+    margin-left:450px;
+    margin-top:30px;
+    padding:10px;
+    background-color: aquamarine;
+    text-align: center;
+}
+hr{
+    border: 5px solid rgba(190, 234, 123, 0.9);
+}
+.error1,.error2{
+    color:red;
+    font-size:20px;
+}

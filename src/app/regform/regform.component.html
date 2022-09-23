@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>REACTIVE FORM</h2>
+    <hr>
+    <form [formGroup]="myform">
+        Email Id: <input type="text" formControlName='email'/><br/>
+        <small class="error1" *ngIf="myform.controls.email.touched && myform.controls.email.invalid && myform.controls.email.errors.required">Email is required</small><br/>
+
+        Password: <input type="password" formControlName='password'/><br/>
+        <small class="error1" *ngIf="myform.controls.password.invalid && myform.controls.password.errors.required">Password is required</small><br/>
+
+      <input  type="submit" value="SUBMIT" class="btn btn-primary" (click)='reg()'/>
+     
+      <div [innerHTML]="msg"  class="alert alert-dark" class="msg"></div>
+   </form>
+  </div>
+   

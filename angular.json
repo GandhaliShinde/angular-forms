@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "formapp"
+    }
+  },
+  "defaultProject": "formapp",
+  "cli": {
+    "analytics": false
+  }
 }

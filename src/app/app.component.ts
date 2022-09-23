@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'formapp';
+email:string='';
+pwd:string='';
+
+sendData(data:any):void{
+    alert('working..'+data)
+    console.log(data)
+  }
 }
