@@ -20,15 +20,14 @@ h2 {
 }
 
 .container {
-  background-image: url("src\assets\ThreadbareIndelibleHookersealion-mobile.gif");
-
+  background-image: url("src\assets\ezgif-5-6bf72896cb.gif");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container-fluid {
   display: flex;
 
-  background-repeat: no-repeat;
   justify-content: center;
 }
 
