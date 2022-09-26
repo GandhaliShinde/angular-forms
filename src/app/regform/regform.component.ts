@@ -1,6 +1,6 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-regform',
@@ -11,11 +11,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegformComponent implements OnInit {
    myform:FormGroup;
    msg:string;
+   confirmed:string = "";
 
   constructor() { 
     this.myform=new FormGroup({
       email:new FormControl("",[Validators.required]),
-      password:new FormControl("",[Validators.required])
+      password:new FormControl("",[Validators.required]),
+      movie:new FormControl("",[Validators.required]),
+      name:new FormControl("",[Validators.required]),
+      date:new FormControl("",[Validators.required]),
+      time:new FormControl("",[Validators.required])
+      
+
     });
   }
 
@@ -23,13 +30,39 @@ export class RegformComponent implements OnInit {
     
   }
 
+  // reg():void{
+  //   if(this.myform.valid) {
+  //   alert('working...')
+  //   this.msg='SUCCESSFULLY REGISTER';
+    
+  //   }else{
+  //     this.msg='FAILED TO REGISTER';
+
+  //   }
+  // }
+
+
+
+
+
   reg():void{
-    if(this.myform.valid) {
-    alert('working...')
-    this.msg='SUCCESSFULLY REGISTER';
-    this.myform.
-    }else{
-      this.msg='FAILED TO REGISTER';
+    if(this.myform.value.movieName == "Choose..."){
+      alert('Select Movie!');
+      this.confirmed = "Something went wrong, Try again later."
+
+    }
+    else if(this.myform.value.name=="" || this.myform.value.mobile=="" || this.myform.value.email=="" || this.myform.value.date=="" || this.myform.value.time==""){
+      alert('Enter all the details');
+      this.confirmed = "Something went wrong, Check the details."
+
+    }
+    else{
+
+      alert('You are booking:' + this.myform.value.movie + "\n" + " on date:" + this.myform.value.date);
+     this.confirmed = "Your movie is booked successfully"
+
+
+
 
     }
   }

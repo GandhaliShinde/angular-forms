@@ -1,16 +1,122 @@
 <div class="container">
-    <h2>REACTIVE FORM</h2>
-    <hr>
+  <h2>Book your Movie</h2>
+
+  <div class="container-fluid">
     <form [formGroup]="myform">
-        Email Id: <input type="text" formControlName='email'/><br/>
-        <small class="error1" *ngIf="myform.controls.email.touched && myform.controls.email.invalid && myform.controls.email.errors.required">Email is required</small><br/>
+      <div class="input-group mb-3 mt-5">
+        <label class="input-group-text" for="inputGroupSelect01">Movie</label>
+        <select
+          class="form-select"
+          id="inputGroupSelect01"
+          formControlName="movie"
+        >
+          <option selected>Choose...</option>
+          <option value="The Matrix Adventure">The Matrix Adventure</option>
+          <option value="Jungle Cruise Comedy">Jungle Cruise Comedy</option>
+          <option value="Wild Tailes">Wild Tailes</option>
+          <option value="3 Idiots">3 Idiots</option>
+        </select>
+      </div>
 
-        Password: <input type="password" formControlName='password'/><br/>
-        <small class="error1" *ngIf="myform.controls.password.invalid && myform.controls.password.errors.required">Password is required</small><br/>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"> Full Name </span>
+        <input
+          type="name"
+          class="form-control"
+          id="name"
+          placeholder="name"
+          formControlName="name"
+        />
+      </div>
 
-      <input  type="submit" value="SUBMIT" class="btn btn-primary" (click)='reg()'/>
-     
-      <div [innerHTML]="msg"  class="alert alert-dark" class="msg"></div>
-   </form>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"> Email </span>
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInputGrid"
+          placeholder="name@example.com"
+          formControlName="email"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"> Mobile </span>
+        <input
+          type="mobile"
+          class="form-control"
+          id="mobile"
+          placeholder="phone number"
+          formControlName="mobile"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"> Genres </span>
+
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="flexCheckDefault"
+            formControlName="action"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            ACTION
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="flexCheckChecked"
+            formControlName="adventure"
+            checked
+          />
+          <label class="form-check-label" for="flexCheckChecked">
+            ADVENTURE
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="flexCheckDefault"
+            formControlName="comedy"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            COMEDY
+          </label>
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"> Date & Time</span>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          formControlName="date"
+        />
+
+        <input
+          type="time"
+          class="form-control"
+          id="time"
+          formControlName="time"
+        />
+      </div>
+
+      <input
+        type="submit"
+        value="SUBMIT"
+        class="btn btn-info"
+        (click)="reg()"
+      />
+
+      <div [innerHTML]="msg" class="alert alert-dark" class="msg"></div>
+    </form>
   </div>
-   
+
+  {{ confirmed }}
+</div>
